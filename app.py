@@ -44,7 +44,10 @@ non_productive = st.number_input("Non-Productive Hours (per day)", min_value=0.0
 semi_productive = st.number_input("Semi-Productive Hours (per day)", min_value=0.0, max_value=24.0, value=1.0, step=0.1)
 productive = st.number_input("Productive Hours (per day)", min_value=0.0, max_value=24.0, value=4.0, step=0.1)
 club_score = st.number_input("Club/Extracurricular Score", min_value=0.0, max_value=10.0, value=3.0, step=0.1)
-internship_status = st.selectbox("Internship Completed?", [0, 1])
+# Internship/Scholarship Status
+internship_status = st.selectbox("Internship/Scholarship", ["No", "Yes"])
+internship_status = 1 if internship_status == "Yes" else 0
+
 family_income = st.selectbox("Family Income", ['<1 LPA', '1-5 LPA', '5-10 LPA', '10+ LPA'])
 
 if st.button("🔮 Predict Dropout Probability"):
