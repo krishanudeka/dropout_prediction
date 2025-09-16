@@ -41,6 +41,7 @@ current_gpa = st.number_input("Current GPA", min_value=0.0, max_value=10.0, valu
 previous_gpa = st.number_input("Previous GPA", min_value=0.0, max_value=10.0, value=7.6, step=0.1)
 gpa_diff = current_gpa - previous_gpa
 non_productive = st.number_input("Non-Productive Hours (per day)", min_value=0.0, max_value=24.0, value=2.0, step=0.1)
+semi_productive = st.number_input("Semi-Productive Hours (per day)", min_value=0.0, max_value=24.0, value=1.0, step=0.1)
 productive = st.number_input("Productive Hours (per day)", min_value=0.0, max_value=24.0, value=4.0, step=0.1)
 club_score = st.number_input("Club/Extracurricular Score", min_value=0.0, max_value=10.0, value=3.0, step=0.1)
 internship_status = st.selectbox("Internship Completed?", [0, 1])
@@ -53,6 +54,7 @@ if st.button("🔮 Predict Dropout Probability"):
         "Previous_GPA": previous_gpa,
         "GPA_Diff": gpa_diff,
         "NonProductive_Hrs": non_productive,
+        "SemiProductive_Hrs": semi_productive,
         "Productive_Hrs": productive,
         "Club_Score": club_score,
         "Internship_Status": internship_status,
